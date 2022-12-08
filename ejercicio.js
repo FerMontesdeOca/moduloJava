@@ -670,3 +670,37 @@ const RickAndMortyCharacters = {
       }
     ]
   }
+
+  RickAndMortyCharacters.results.map((personaje) => {
+    //Nombre de rick Sanchez
+    if (personaje.name === "Rick Sanchez") {
+      console.log("El nombre de Rick es :" + personaje.name);
+      console.log("origen de Rick: " + personaje.origin.name);
+    }
+    //Genero de Morty
+    if (personaje.name === "Morty Smith") {
+      console.log("El genero de Morty es: " + personaje.gender);
+    }
+    //Origen de Summer Smith
+    if (personaje.name === "Summer Smith") {
+      console.log("el origen de Sumer es: " + personaje.origin.name);
+    }
+    //Episodios de beth smith
+    if (personaje.name === "Beth Smith") {
+      console.log("Beth sale en los episodios: " + personaje.episode);
+    }
+    //ID de Jerry Smith
+    if (personaje.name === "Jerry Smith") {
+      console.log("Id de Jery: " + personaje.id);
+    }
+    //Imagen Abradolf Lincler
+    if (personaje.name === "Abradolf Lincler") {
+      console.log("url Image Abradolf Lincler: " + personaje.image);
+    }
+    //localizacion de Amish Cyborg
+    if (personaje.name === "Amish Cyborg") {
+      console.log("localizacion de Amish Cyborg: " + personaje.location.name);
+    }
+  });
+  //Total personajes
+  console.log("total de perosnajes: " + RickAndMortyCharacters.results.length);
