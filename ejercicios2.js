@@ -15,7 +15,7 @@ function mayorQue(array, num){
     let result = 0;
     for(let i = 0; i < array.length; i++){
         if(array[i] > num){
-           result = result + 1;
+           result++;
         }
     }
     return result;
@@ -31,13 +31,13 @@ function numPares(array){
     }
     return newArray;
 }
-console.log(numPares());
+console.log(numPares([1,2,5,3,6]));
 //- Crear una función que pueda contar cuantas veces aparece un elemento dado en los parámetros en un arreglo también dado en sus parámetros
 function contador(array, element){
     let accum = 0;
     for(let i = 0; i < array.length; i++){
         if(element === array[i]){
-            accum = accum + 1;
+         accum++;
         }
     }
     return accum;
@@ -48,7 +48,7 @@ function verificador(array, param){
     let result = 0;
     for(let i = 0; i < array.length; i++){
         if(param === array[i]){
-            result = result + 1;
+            result++;
         }
     }
     if(result > 0){
