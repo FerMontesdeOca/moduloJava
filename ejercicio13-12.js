@@ -69,7 +69,34 @@ const songsData = [
         },
     }
   ];
+
+//   La cancion con más reproducciones
+  const moreReproductions = (array) => {
+    let cancion = array[0];
+    for(let i=0; i < array.length; i++){
+        if(array[i].statistics.reproductions > cancion.statistics.reproductions){
+            cancion = array[i]
+        }
+    }
+
+    console.log(`La cancion con mas reproducciones es: ${cancion.name} con ${cancion.statistics.reproductions} reproducciones`);
+  }
   
+  moreReproductions(songsData);
+
+//   - La cancion con más likes
+  const moreLikes = (array) => {
+    let cancion = array[0];
+    for(let i=0; i < array.length; i++){
+        if(array[i].statistics.likes > cancion.statistics.likes){
+            cancion = array[i]
+        }
+    }
+
+    console.log(`La cancion con mas likes es: ${cancion.name} con ${cancion.statistics.likes} likes`);
+  }
+  
+  moreLikes(songsData);
   /*
   Ejercicio 2:
   Pedir al usuario un numero entre 10 y 100
@@ -89,7 +116,38 @@ const songsData = [
   Ejercicio 3:
   Imprimir en consola la suma total de todos los digitos de una cantidad p.ej. "1234" -> 10
   */
+  const suma = () =>{
+    let numeros = prompt("ingresa un numero para obtener la suma de sus digitos: ")
+     numeros = numeros.split("");
+     let suma = 0;
+     for (let numero of numeros) {
+         suma = suma + parseInt(numero);
+     }
+    console.log(`la suma total de los digitos es de: ${suma}`);
+ }
   
+ suma()
   /*Ejercicio 4:
   Realizar una funcion que genere un numero aleatorio entre 1 y 10,El usuario debe adivinarlo con las pistas de "es mayor" o es menor en un numero determinado de intentos
   */
+ 
+  const adivinaNumero = () =>{
+    const numero = Math.floor(Math.random() * 10) + 1;
+    console.log("Adivina un numero del 1 al 10")
+    let numIntentos = 5;
+    do {
+      const numIngresado = parseInt(prompt("Ingresa un numero: "))
+      if(numIngresado == numero){
+        console.log(`Felicidades acertaste el numero era ${numero}`)
+        break;
+      }
+      else if (numIngresado < numero){
+        console.log("Es mayor");
+      }else{
+        console.log("Es menor");
+      }
+      numIntentos--;
+    } while (numIntentos > 0);
+  }
+
+  adivinaNumero();
