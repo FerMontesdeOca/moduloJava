@@ -100,3 +100,159 @@ let dataArray = [
     const arrayPorBandas = (array) =>{
         
     }
+
+    const mentorsArray = [
+      {
+        name: "Ivan Diaz",
+        scores: [
+          {
+            signature: "HTML",
+            score: 8
+          },
+          {
+            signature: "CSS",
+            score: 10
+          },
+          {
+            signature: "JS",
+            score: 8
+          },
+          {
+            signature: "ReactJS",
+            score: 8
+          }
+        ]
+      },
+      {
+        name: "Alan Medina",
+        scores: [
+          {
+            signature: "HTML",
+            score: 8
+          },
+          {
+            signature: "CSS",
+            score: 7
+          },
+          {
+            signature: "JS",
+            score: 10
+          },
+          {
+            signature: "ReactJS",
+            score: 10
+          }
+        ]
+      },
+      {
+        name: "Elvira Camarillo",
+        scores: [
+          {
+            signature: "HTML",
+            score: 9
+          },
+          {
+            signature: "CSS",
+            score: 9
+          },
+          {
+            signature: "JS",
+            score: 10
+          },
+          {
+            signature: "ReactJS",
+            score: 9
+          }
+        ]
+      },
+      {
+        name: "Alejandra Paez",
+        scores: [
+          {
+            signature: "HTML",
+            score: 8
+          },
+          {
+            signature: "CSS",
+            score: 10
+          },
+          {
+            signature: "JS",
+            score: 9
+          },
+          {
+            signature: "ReactJS",
+            score: 10
+          }
+        ]
+      },
+      {
+        name: "Alejandra Paez",
+        scores: [
+          {
+            signature: "HTML",
+            score: 10
+          },
+          {
+            signature: "CSS",
+            score: 10
+          },
+          {
+            signature: "JS",
+            score: 9
+          },
+          {
+            signature: "ReactJS",
+            score: 10
+          }
+        ]
+      }
+    ];
+    // Tomando en cuenta la estructura de datos de mentorsArray debes crear un arreglo nuevo con el promedio de cada mentor 
+    // output:
+    // const newArray = [
+    //   {
+    //     name:'ivan',
+    //     average: 9,
+    //   },
+    //   {
+    //     name:'Alan',
+    //     average: 9,
+    //   },
+    // ]
+
+    const getAverageByMentor = (mentores) =>{
+      // itera el array por mentor para poder sacar las propiedades que necesitamos
+      const mentorList = mentores.map((item)=>{
+        let average = 0;
+      // itera el  elemento score que es otro array para poder sacar el promedio
+        item.scores.forEach((resultado) => {
+          average += resultado.score;
+        });
+      //creamos el objeto que vamos a regresar a el nuevo array mentorList 
+        const mentorResult = {
+          name: item.name,
+          average: average / item.scores.length
+        };
+        return mentorResult;
+      });
+      return mentorList;
+    };
+
+    console.log(getAverageByMentor(mentorsArray));
+
+    // usar el filter para regresar mentores que empiecen con la letra A
+    const mentoresConA = mentorsArray.filter((item)=> item.name[0].toUpperCase() === "A" );
+
+    console.log(mentoresConA);
+
+
+    const getMentorsBySignature = (mentorList, search)=>{
+      const resultmentors =[];
+      mentorList.forEach((mentor)=>{
+       const result = mentor.scores.filter((clase)=> clase.signature === search)
+       if(result.length > 0){
+        resultmentors.push()
+       }
+      })
+    };
