@@ -36,7 +36,7 @@ let dataArray = [
     return newArray;
   }
 
-  console.log(kodemiamentores(dataArray));
+  // console.log(kodemiamentores(dataArray));
 
     // Ejercicio de arreglo de canciones
 
@@ -109,10 +109,10 @@ let dataArray = [
             signature: "HTML",
             score: 8
           },
-          {
-            signature: "CSS",
-            score: 10
-          },
+          // {
+          //   signature: "CSS",
+          //   score: 10
+          // },
           {
             signature: "JS",
             score: 8
@@ -239,20 +239,45 @@ let dataArray = [
       return mentorList;
     };
 
-    console.log(getAverageByMentor(mentorsArray));
+    // console.log(getAverageByMentor(mentorsArray));
 
     // usar el filter para regresar mentores que empiecen con la letra A
     const mentoresConA = mentorsArray.filter((item)=> item.name[0].toUpperCase() === "A" );
 
-    console.log(mentoresConA);
+    // console.log(mentoresConA);
 
-
-    const getMentorsBySignature = (mentorList, search)=>{
-      const resultmentors =[];
-      mentorList.forEach((mentor)=>{
-       const result = mentor.scores.filter((clase)=> clase.signature === search)
-       if(result.length > 0){
-        resultmentors.push()
-       }
-      })
+    // obneter un array con las asignaturas por mentor 
+    const getSignatureByMentor = (mentores) =>{
+     const mentorList = mentores.map((item)=>{
+       const signatures = [];
+        item.scores.forEach(element => {
+          signatures.push(element.signature)
+        });
+        const mentorSignatures = {
+          name: item.name,
+          signatures: signatures
+        };
+        return mentorSignatures
+    });
+      return mentorList
     };
+
+    // console.log(getSignatureByMentor(mentorsArray));
+
+    const mentorSignatures = getSignatureByMentor(mentorsArray);
+    
+    function signature(array , text){
+      const filterSignature = [];
+      array.forEach(element => {
+          element.signatures.filter((item)=>{
+            if(item === text.toUpperCase()){
+              filterSignature.push(element.name);
+            }
+          })
+      });
+      
+      return filterSignature;
+    }
+
+    console.log(signature(mentorSignatures,'js'));
+   
