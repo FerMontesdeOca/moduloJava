@@ -266,6 +266,7 @@ let dataArray = [
 
     const mentorSignatures = getSignatureByMentor(mentorsArray);
     
+    //filtrar el array por materia para que te muestre que profesores la imparten
     function signature(array , text){
       const filterSignature = [];
       array.forEach(element => {
