@@ -36,7 +36,7 @@ let dataArray = [
     return newArray;
   }
 
-  // console.log(kodemiamentores(dataArray));
+  //  console.log(kodemiamentores(dataArray));
 
     // Ejercicio de arreglo de canciones
 
@@ -239,12 +239,12 @@ let dataArray = [
       return mentorList;
     };
 
-    // console.log(getAverageByMentor(mentorsArray));
+    //  console.log(getAverageByMentor(mentorsArray));
 
     // usar el filter para regresar mentores que empiecen con la letra A
     const mentoresConA = mentorsArray.filter((item)=> item.name[0].toUpperCase() === "A" );
 
-    // console.log(mentoresConA);
+    //  console.log(mentoresConA);
 
     // obneter un array con las asignaturas por mentor 
     const getSignatureByMentor = (mentores) =>{
@@ -262,7 +262,7 @@ let dataArray = [
       return mentorList
     };
 
-    // console.log(getSignatureByMentor(mentorsArray));
+    //  console.log(getSignatureByMentor(mentorsArray));
 
     const mentorSignatures = getSignatureByMentor(mentorsArray);
     
@@ -280,5 +280,5 @@ let dataArray = [
       return filterSignature;
     }
 
-    console.log(signature(mentorSignatures,'js'));
+    console.log(signature(mentorSignatures,'css'));
    
