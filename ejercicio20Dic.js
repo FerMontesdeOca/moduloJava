@@ -281,4 +281,3 @@ let dataArray = [
     }
 
     console.log(signature(mentorSignatures,'css'));
-   

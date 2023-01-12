@@ -10,7 +10,7 @@
      alert(`El nombre ${nombre} tiene ${suma} letras`);
 };
 
-    letrasDelNombre();
+    // letrasDelNombre();
 
 // 💪   Ejercicio 2:
 // Solicitar el nombre completo a un usuario e indicarle cuantas vocales tiene.
@@ -26,7 +26,7 @@
         alert(`El nombre ${nombre} tiene ${todasLasVocales} vocales`)
     }   
 
-    vocalesDelNombre();
+    // vocalesDelNombre();
 
 
 // 💪   Ejercicio 3:
@@ -34,10 +34,16 @@
     // - Contar cuántas veces se usa la palabra “estudiante” y reemplazar todas las coincidencias 
         // por la palabra “Koder”, 
     // - y mostrar el mensaje de nuevo al usuario
-    const text = "Cada estudiante tiene su ritmo, cada estudiante tiene su talento, y cada estudiante complementa al estudiante que tiene a su lado";
-    
-    const replace=()=> text.replaceAll("estudiante", "koder");
-
+    const replace=()=>{
+      const text = "Cada estudiante tiene su ritmo, cada estudiante tiene su talento, y cada estudiante complementa al estudiante que tiene a su lado";
+       const newText = text.split(" ")
+       const counter = newText.filter(element => element == "estudiante");
+       const textModified =  text.replaceAll("estudiante", "koder");
+        
+      return `La palabra estudiante se repite ${counter.length} veces y el nuevo texto modificado es:
+      ${textModified}`;
+      }
+      
     alert(replace());
 
 // 💪   Ejercicio 4:
