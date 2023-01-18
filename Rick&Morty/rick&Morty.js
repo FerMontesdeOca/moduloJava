@@ -20,13 +20,13 @@ import RickAndMortyCharacters from "./DataRick&Morty.js";
     console.log(element)
     const card = document.createElement('div');
     card.id = element.id
-    card.classList.add('card', 'm-3', 'col-5');
-    card.style = "width: 18rem;";
+    card.classList.add('card', 'm-3', 'col-5', 'bg-secondary', 'd-flex', 'flex-row');
+    card.style = "width: 28rem;";
     container.appendChild(card);
     // // image
     const cardImage = document.createElement('img');
         cardImage.src = element.image;
-        cardImage.classList.add('card-img-top', 'mt-1');
+        cardImage.classList.add('card-img-top', 'mt-1', 'm-2', 'rounded');
         card.appendChild(cardImage);
     // //card Body
     const cardBody = document.createElement('div');
