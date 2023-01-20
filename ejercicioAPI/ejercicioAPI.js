@@ -1,6 +1,11 @@
-import RickAndMortyCharacters from "./DataRick&Morty.js";
 
- const NewCard =(array) =>{
+
+
+const getCharacter = async() =>{
+    const response = await fetch('https://rickandmortyapi.com/api/character');
+    const data = await response.json();
+    const character = data.results;
+
     const section = document.createElement('section')
     section.classList.add('container', 'my-5')
     document.body.appendChild(section);
@@ -13,10 +18,8 @@ import RickAndMortyCharacters from "./DataRick&Morty.js";
     title.textContent="Characters"
     container.classList.add('justify-content-center', 'align-middle')
     container.appendChild(title)
-    
 
-    array.forEach(element => {
-    //create the card
+    character.forEach(element => {
     const card = document.createElement('div');
     card.id = element.id
     card.classList.add('card', 'm-3', 'col-5', 'bg-secondary', 'd-flex', 'flex-row');
@@ -51,8 +54,9 @@ import RickAndMortyCharacters from "./DataRick&Morty.js";
     characterType.textContent = `Type: ${element.type}`;
     characterType.classList.add('card-text')
     cardBody.appendChild(characterType);
-    
- })
-};
+    });
 
- NewCard(RickAndMortyCharacters);
+}
+
+getCharacter();
+
